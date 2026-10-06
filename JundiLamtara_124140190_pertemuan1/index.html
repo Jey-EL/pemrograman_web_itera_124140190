@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini POS - Kasir Kantin</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Mini POS</h1>
+            <p class="subtitle">Kasir &amp; keranjang belanja kantin</p>
+        </header>
+
+        <main class="layout">
+
+            <!-- Kolom kiri: form dan keranjang -->
+            <div class="kolom-utama">
+
+                <!-- Form Tambah Barang -->
+                <section aria-labelledby="judul-form">
+                    <h2 id="judul-form">Tambah barang</h2>
+
+                    <form id="form-barang" novalidate>
+
+                        <div class="form-group">
+                            <label for="nama-barang">Nama barang</label>
+                            <input type="text" id="nama-barang" placeholder="Contoh: Buku Tulis" autocomplete="off">
+                            <small id="error-nama" class="pesan-error" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="harga">Harga satuan (Rp)</label>
+                                <input type="number" id="harga" placeholder="Minimal 500" inputmode="numeric">
+                                <small id="error-harga" class="pesan-error" aria-live="polite"></small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="qty">Jumlah (qty)</label>
+                                <input type="number" id="qty" placeholder="Minimal 1" inputmode="numeric">
+                                <small id="error-qty" class="pesan-error" aria-live="polite"></small>
+                            </div>
+                        </div>
+
+                        <button type="submit">Tambah ke keranjang</button>
+
+                    </form>
+                </section>
+
+
+                <!-- Keranjang Belanja -->
+                <section aria-labelledby="judul-keranjang">
+                    <h2 id="judul-keranjang">Keranjang belanja</h2>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Barang</th>
+                                    <th>Harga Satuan</th>
+                                    <th>Qty</th>
+                                    <th>Subtotal</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="keranjang">
+                                <!-- Data barang ditampilkan oleh script.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+
+
+            <!-- Kolom kanan: ringkasan dan pembayaran -->
+            <aside class="kolom-samping">
+
+                <!-- Ringkasan Belanja -->
+                <section aria-labelledby="judul-ringkasan">
+                    <h2 id="judul-ringkasan">Ringkasan belanja</h2>
+
+                    <div class="baris">
+                        <span>Total belanja</span>
+                        <strong id="total-belanja">Rp0</strong>
+                    </div>
+
+                    <div class="baris">
+                        <span>Diskon</span>
+                        <strong id="diskon">Rp0</strong>
+                    </div>
+
+                    <div class="baris baris-total">
+                        <span>Total akhir</span>
+                        <strong id="total-akhir">Rp0</strong>
+                    </div>
+
+                    <p class="catatan">Diskon 10% berlaku untuk total belanja minimal Rp50.000.</p>
+                </section>
+
+
+                <!-- Pembayaran -->
+                <section aria-labelledby="judul-pembayaran">
+                    <h2 id="judul-pembayaran">Pembayaran</h2>
+
+                    <div class="form-group">
+                        <label for="uang-bayar">Uang bayar (Rp)</label>
+                        <input type="number" id="uang-bayar" placeholder="Uang yang diterima" inputmode="numeric">
+                    </div>
+
+                    <div class="baris">
+                        <span>Kembalian</span>
+                        <strong id="kembalian">Rp0</strong>
+                    </div>
+
+                    <p id="status-pembayaran" class="status" aria-live="polite"></p>
+                </section>
+
+
+                <!-- Transaksi Baru -->
+                <button id="transaksi-baru" type="button">Transaksi baru</button>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

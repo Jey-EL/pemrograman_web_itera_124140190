@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li.selesai span {
+    text-decoration: line-through;
+    color: gray;
+}

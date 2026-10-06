@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Mahasiswa</title>
+</head>
+
+<body>
+
+    <h1>Data Mahasiswa</h1>
+
+    <input type="text" id="nama" placeholder="Nama">
+    <input type="text" id="nim" placeholder="NIM">
+    <input type="text" id="jurusan" placeholder="Jurusan">
+    <input type="number" id="nilai" placeholder="Nilai (0-100)">
+
+    <button id="tambah">Tambah</button>
+
+    <p id="pesan-error" style="color: red;"></p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Jurusan</th>
+                <th>Nilai</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+
+        <tbody id="daftar-mahasiswa"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
