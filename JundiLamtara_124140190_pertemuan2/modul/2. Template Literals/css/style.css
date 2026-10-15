@@ -1,0 +1,54 @@
+/* css/style.css */
+/* Styling tambahan di luar Tailwind */
+
+body {
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  min-height: 100vh;
+}
+
+/* Animasi muncul untuk setiap kartu output */
+.output-item {
+  animation: fadeInUp 0.35s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Area hasil kode (pre) */
+.output-item .result {
+  line-height: 1.6;
+  max-height: 320px;
+}
+
+/* Scrollbar tipis */
+.output-item .result::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.output-item .result::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 9999px;
+}
+
+/* Efek tekan pada tombol */
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

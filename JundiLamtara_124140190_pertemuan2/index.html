@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deadline Board ITERA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="top">
+    <div class="clock">
+      <p id="time" class="time">--:--</p>
+      <p id="date" class="date"></p>
+    </div>
+    <div class="widgets">
+      <div class="widget"><span class="label">Cuaca ITERA</span><strong id="weather">Memuat…</strong></div>
+      <figure class="widget quote">
+        <blockquote id="quote">Memuat kutipan…</blockquote>
+        <figcaption id="author"></figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h1>Deadline Board</h1>
+      <p class="sub">Catat tugas kuliah, lihat mana yang paling dekat tenggatnya.</p>
+      <form id="task-form" autocomplete="off">
+        <input id="title" name="title" placeholder="Judul tugas, mis. Laporan Praktikum 3" required maxlength="80">
+        <select id="course" name="course" aria-label="Mata kuliah"></select>
+        <input id="deadline" name="deadline" type="date" aria-label="Tenggat" required>
+        <button id="submit-btn" type="submit">Tambah tugas</button>
+        <button id="cancel-btn" type="button" hidden>Batal</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="bar">
+        <div id="stats" class="stats"></div>
+        <div class="filters" role="group" aria-label="Filter">
+          <button data-filter="all" class="on">Semua</button>
+          <button data-filter="active">Belum selesai</button>
+          <button data-filter="done">Selesai</button>
+        </div>
+      </div>
+      <ul id="task-list" class="tasks"></ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
