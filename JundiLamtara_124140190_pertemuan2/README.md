@@ -8,6 +8,8 @@ Personal dashboard untuk mahasiswa: mencatat tugas kuliah per mata kuliah, melih
 - **NIM:** 124140190
 - **Program Studi:** Teknik Informatika
 - **Kelas Praktikum:** Pengembangan Aplikasi Web RB
+- **Repository GitHub:** [Source Code Pertemuan 2](https://github.com/Jey-EL/pemrograman_web_itera_124140190/tree/main/JundiLamtara_124140190_pertemuan2)
+- **GitHub Pages:** [Demo Pertemuan 2](https://jey-el.github.io/pemrograman_web_itera_124140190/pertemuan2/)
 
 ## Fitur
 - Tambah, edit, hapus, dan tandai selesai tugas (judul, mata kuliah, tenggat).

@@ -1,0 +1,44 @@
+
+name: Deploy Pertemuan 1 dan 2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Siapkan folder website
+        run: |
+          mkdir -p public/pertemuan1 public/pertemuan2
+          cp -r JundiLamtara_124140190_pertemuan1/. public/pertemuan1/
+          cp -r JundiLamtara_124140190_pertemuan2/. public/pertemuan2/
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
