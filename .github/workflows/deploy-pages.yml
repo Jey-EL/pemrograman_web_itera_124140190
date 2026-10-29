@@ -1,5 +1,4 @@
-
-name: Deploy Pertemuan 1 dan 2
+name: Deploy Pertemuan 1, 2, dan 3
 
 on:
   push:
@@ -31,9 +30,14 @@ jobs:
 
       - name: Siapkan folder website
         run: |
-          mkdir -p public/pertemuan1 public/pertemuan2
+          mkdir -p public/pertemuan1 public/pertemuan2 public/pertemuan3
+
           cp -r JundiLamtara_124140190_pertemuan1/. public/pertemuan1/
           cp -r JundiLamtara_124140190_pertemuan2/. public/pertemuan2/
+
+          npm ci --prefix JundiLamtara_124140190_pertemuan3
+          npm run build --prefix JundiLamtara_124140190_pertemuan3
+          cp -r JundiLamtara_124140190_pertemuan3/dist/. public/pertemuan3/
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
