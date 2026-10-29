@@ -1,0 +1,6 @@
+.book-filter { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 1rem; }
+.book-filter__search label { display: block; font-weight: 600; margin-bottom: .25rem; }
+.book-filter__search input { width: 100%; padding: .55rem .65rem; border: 1px solid var(--line); border-radius: var(--radius); font: inherit; }
+.book-filter__tabs { display: flex; gap: .4rem; flex-wrap: wrap; }
+.book-filter__tab { border: 1px solid var(--line); background: var(--surface); padding: .35rem .8rem; border-radius: 999px; color: var(--ink); }
+.book-filter__tab.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }

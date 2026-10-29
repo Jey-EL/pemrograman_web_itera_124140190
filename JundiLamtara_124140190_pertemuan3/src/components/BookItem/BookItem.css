@@ -1,0 +1,11 @@
+.book-item { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-left: 8px solid var(--line); border-radius: var(--radius); padding: .9rem 1rem; }
+.book-item--milik { border-left-color: var(--milik); }
+.book-item--baca { border-left-color: var(--baca); }
+.book-item--beli { border-left-color: var(--beli); }
+.book-item__title { font-size: 1.1rem; margin: 0; }
+.book-item__author { margin: 0 0 .4rem; color: var(--muted); }
+.book-item__actions { display: flex; gap: .4rem; }
+.badge { display: inline-block; font-size: .8rem; font-weight: 600; padding: .1rem .55rem; border-radius: 999px; color: #fff; }
+.badge--milik { background: var(--milik); }
+.badge--baca { background: var(--baca); }
+.badge--beli { background: var(--beli); }

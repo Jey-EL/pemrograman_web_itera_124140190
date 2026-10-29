@@ -1,0 +1,51 @@
+.container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.stats-wrapper {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.clear-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clear-btn:hover:not(:disabled) {
+  background-color: #dc2626;
+}
+
+.clear-btn:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}

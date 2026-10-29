@@ -1,0 +1,9 @@
+.stats__total { font-size: 1.1rem; }
+.stats__empty { background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); padding: 1.25rem; color: var(--muted); }
+.stats__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; max-width: 560px; }
+.stats__label { display: flex; justify-content: space-between; margin-bottom: .25rem; font-weight: 600; }
+.stats__bar { height: 14px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.stats__fill { height: 100%; transition: width .3s; }
+.stats__fill--milik { background: var(--milik); }
+.stats__fill--baca { background: var(--baca); }
+.stats__fill--beli { background: var(--beli); }

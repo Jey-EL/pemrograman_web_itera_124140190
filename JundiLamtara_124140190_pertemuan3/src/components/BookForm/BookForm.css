@@ -1,0 +1,7 @@
+.book-form { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; }
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-weight: 600; margin-bottom: .25rem; }
+.field input, .field select { width: 100%; padding: .55rem .65rem; border: 1px solid var(--line); border-radius: var(--radius); font: inherit; background: #fff; color: var(--ink); }
+.field--error input { border-color: var(--danger); background: #fdf1ef; }
+.field__error { color: var(--danger); font-size: .875rem; margin: .25rem 0 0; }
+.book-form__actions { display: flex; gap: .5rem; flex-wrap: wrap; }

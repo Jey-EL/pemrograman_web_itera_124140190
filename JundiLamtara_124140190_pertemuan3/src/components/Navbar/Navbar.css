@@ -1,0 +1,6 @@
+.navbar { background: var(--ink); color: #fff; }
+.navbar__inner { max-width: 1040px; margin: 0 auto; padding: .75rem 1rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.navbar__brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; }
+.navbar__link { color: #cbd5e3; text-decoration: none; padding: .35rem .75rem; border-radius: var(--radius); margin-left: .25rem; }
+.navbar__link:hover { color: #fff; }
+.navbar__link.is-active { background: #fff; color: var(--ink); font-weight: 600; }
