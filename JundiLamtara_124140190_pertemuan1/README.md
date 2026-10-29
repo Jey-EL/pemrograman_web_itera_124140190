@@ -7,7 +7,7 @@
 - **Program Studi:** Teknik Informatika
 - **Kelas Praktikum:** Pengembangan Aplikasi Web RB
 - **Repository GitHub:** [Source Code Pertemuan 1](https://github.com/Jey-EL/pemrograman_web_itera_124140190/tree/main/JundiLamtara_124140190_pertemuan1)
-- **GitHub Pages:** [Demo Aplikasi Mini POS](https://jey-el.github.io/pemrograman_web_itera_124140190/pertemuan1/)
+- **GitHub Pages:** [Demo Pertemuan 1](https://jey-el.github.io/pemrograman_web_itera_124140190/pertemuan1/)
 
 ## Deskripsi Aplikasi
 
