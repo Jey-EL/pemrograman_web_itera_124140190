@@ -1,13 +1,10 @@
 
-name: Deploy Pertemuan 1 to GitHub Pages
+name: Deploy Pertemuan 1 dan 2
 
 on:
   push:
     branches:
       - main
-    paths:
-      - "JundiLamtara_124140190_pertemuan1/**"
-      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -23,7 +20,6 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
@@ -33,11 +29,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Siapkan folder website
+        run: |
+          mkdir -p public/pertemuan1 public/pertemuan2
+          cp -r JundiLamtara_124140190_pertemuan1/. public/pertemuan1/
+          cp -r JundiLamtara_124140190_pertemuan2/. public/pertemuan2/
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./JundiLamtara_124140190_pertemuan1
+          path: ./public
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
