@@ -37,6 +37,7 @@ python tugas1_bmi.py
 ```
 
 **Screenshot hasil eksekusi:** 
+
 ![Penghitung BMI](images/penghitung-bmi.png)
 
 ## Soal 2: Pengelolaan Nilai Mahasiswa (`tugas2_nilai_mahasiswa.py`)
@@ -49,6 +50,7 @@ python tugas2_nilai_mahasiswa.py
 ```
 
 **Screenshot hasil eksekusi:**
+
 ![Nilai Mahasiswa](images/nilai-mahasiswa.png)
 
 ## Soal 3: Modul Matematika (`math_operations.py` & `main.py`)
@@ -65,4 +67,5 @@ python main.py
 Jalankan dari dalam folder yang sama agar impor modul berhasil.
 
 **Screenshot hasil eksekusi:**
+
 ![Modul Matematika](images/modul-matematika.png)
