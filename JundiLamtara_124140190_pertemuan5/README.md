@@ -23,6 +23,7 @@ Program ini merupakan sistem manajemen perpustakaan sederhana menggunakan Python
 
 ```text
 JundiLamtara_124140190_pertemuan5/
+│
 ├── hands-on/
 │   ├── 01_everything_is_object.py
 │   ├── 01_procedural_vs_oop.py
