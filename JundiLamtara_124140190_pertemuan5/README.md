@@ -87,8 +87,6 @@ Pada Windows, perintah `py main.py` juga dapat digunakan.
 
 ![Screenshot output program 2](screenshot/output-program-2.png)
 
-Screenshot harus berasal dari hasil eksekusi program di komputer sendiri.
-
 ## Catatan
 
 Program ini menggunakan dictionary sebagai penyimpanan sementara di memori. Data anggota dan koleksi akan hilang ketika program dihentikan. Simulasi ini belum menggunakan database.
