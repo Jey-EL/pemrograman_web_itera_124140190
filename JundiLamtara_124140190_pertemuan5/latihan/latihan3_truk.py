@@ -1,4 +1,3 @@
-
 # ==============================================================================
 # Berkas: latihan_truk.py
 # Deskripsi: Implementasi Subclass Truk dengan Inheritance dan Method Overriding

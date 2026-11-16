@@ -1,4 +1,3 @@
-
 # ==============================================================================
 # Berkas: latihan_notifikasi.py
 # Deskripsi: Implementasi Polymorphism pada Sistem Notifikasi Multi-Saluran

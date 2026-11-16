@@ -1,4 +1,3 @@
-
 # ==============================================================================
 # Berkas: latihan_storage.py
 # Deskripsi: Penerapan Abstract Class dan Interface File Storage Service

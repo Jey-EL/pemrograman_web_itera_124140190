@@ -1,4 +1,3 @@
-
 # ==============================================================================
 # Berkas: latihan_karyawan.py
 # Deskripsi: Implementasi Encapsulation pada Sistem Penggajian Karyawan

@@ -1,4 +1,3 @@
-
 # ==============================================================================
 # Berkas: latihan_buku.py
 # Deskripsi: Implementasi Class Buku dengan Diskon dan Dunder Length
