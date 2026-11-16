@@ -51,7 +51,7 @@ def main():
     tampilkan_hasil_pencarian(perpustakaan, "M002")
 
     # Polymorphism: method hitung_denda sama, tarif berbeda pada tiap subclass.
-    print("\n=== POLYMORPHISM: DENDA TERLAMBAT 3 HARI ===")
+    print("\n=== DENDA TERLAMBAT 3 HARI ===")
     for item_id in ("B001", "M001"):
         item = perpustakaan.cari_item(item_id)[0]
         denda = perpustakaan.hitung_denda_item(item_id, 3)
