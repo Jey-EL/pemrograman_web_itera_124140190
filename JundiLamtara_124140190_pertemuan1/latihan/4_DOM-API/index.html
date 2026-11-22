@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 4 - DOM, LocalStorage & Fetch API</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body.dark-mode {
+            background-color: #111827;
+            color: #f3f4f6;
+        }
+
+        body.dark-mode .card {
+            background-color: #1f2937;
+            border-color: #374151;
+        }
+
+        body.dark-mode input {
+            background-color: #374151;
+            color: #f9fafb;
+            border-color: #4b5563;
+        }
+    </style>
+</head>
+
+<body class="p-6 max-w-4xl mx-auto space-y-6 transition-colors duration-200">
+    <!-- Header & 4. Dark Mode Toggle -->
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Latihan 4: DOM, LocalStorage & API</h1>
+        <button id="btn-dark-mode" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">
+            Toggle Dark Mode
+        </button>
+    </div>
+
+    <!-- 1 & 2. Form Input Data Mahasiswa + Validasi + localStorage -->
+    <div class="card p-4 border rounded">
+        <h2 class="text-lg font-bold mb-3">1 & 2. Form Mahasiswa (Validasi & LocalStorage)</h2>
+        <form id="form-mahasiswa" class="space-y-3" novalidate>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div>
+                    <input type="text" id="mhs-nama" placeholder="Nama Lengkap" class="border p-2 rounded w-full">
+                    <p id="err-nama" class="text-red-500 text-xs mt-1"></p>
+                </div>
+                <div>
+                    <input type="text" id="mhs-nim" placeholder="NIM (9 digit angka)" class="border p-2 rounded w-full">
+                    <p id="err-nim" class="text-red-500 text-xs mt-1"></p>
+                </div>
+                <div>
+                    <input type="text" id="mhs-jurusan" placeholder="Jurusan" class="border p-2 rounded w-full">
+                    <p id="err-jurusan" class="text-red-500 text-xs mt-1"></p>
+                </div>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Tambah
+                Mahasiswa</button>
+        </form>
+        <ul id="list-mahasiswa" class="mt-4 space-y-2"></ul>
+    </div>
+
+    <!-- 6. Aplikasi Todo List Sederhana dengan DOM & localStorage -->
+    <div class="card p-4 border rounded">
+        <h2 class="text-lg font-bold mb-3">6. Todo List Sederhana (LocalStorage)</h2>
+        <div class="flex gap-2 mb-3">
+            <input type="text" id="todo-input" placeholder="Tulis tugas baru..." class="border p-2 rounded flex-1">
+            <button id="btn-add-todo"
+                class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Tambah</button>
+        </div>
+        <ul id="todo-list" class="space-y-2"></ul>
+    </div>
+
+    <!-- 3 & 5. Fetch API + Search Title + Pagination -->
+    <div class="card p-4 border rounded">
+        <h2 class="text-lg font-bold mb-3">3 & 5. Daftar Post API (Search & Pagination)</h2>
+        <div class="flex flex-col md:flex-row gap-2 mb-4">
+            <button id="btn-load-api" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Ambil Data
+                API</button>
+            <input type="text" id="search-post" placeholder="Cari berdasarkan judul (title)..."
+                class="border p-2 rounded flex-1">
+        </div>
+
+        <div id="api-posts" class="space-y-2"></div>
+
+        <!-- Kontrol Pagination -->
+        <div id="pagination-controls" class="hidden flex items-center justify-between mt-4 pt-3 border-t">
+            <button id="btn-prev" class="bg-gray-500 text-white px-3 py-1 rounded disabled:opacity-40">Previous</button>
+            <span id="page-info" class="text-sm font-semibold"></span>
+            <button id="btn-next" class="bg-gray-500 text-white px-3 py-1 rounded disabled:opacity-40">Next</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

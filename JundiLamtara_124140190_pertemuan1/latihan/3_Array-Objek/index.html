@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 3 - Array & Objek Mahasiswa</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="p-6 max-w-4xl mx-auto space-y-6">
+    <h1 class="text-2xl font-bold">Latihan 3: Manajemen Data Mahasiswa (Array & Objek)</h1>
+
+    <!-- Form Create / Update CRUD -->
+    <div class="p-4 border rounded bg-gray-50">
+        <h2 id="form-title" class="font-bold mb-3">Tambah Data Mahasiswa</h2>
+        <input type="hidden" id="edit-index" value="-1">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mb-3">
+            <input type="text" id="input-nama" placeholder="Nama Mahasiswa" class="border p-2 rounded bg-white">
+            <input type="text" id="input-nim" placeholder="NIM" class="border p-2 rounded bg-white">
+            <input type="text" id="input-jurusan" placeholder="Jurusan" class="border p-2 rounded bg-white">
+            <input type="number" id="input-nilai" placeholder="Nilai (0-100)" class="border p-2 rounded bg-white">
+        </div>
+        <button id="btn-simpan" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Simpan Data</button>
+        <button id="btn-batal" class="hidden bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 ml-2">Batal
+            Edit</button>
+    </div>
+
+    <!-- Kontrol Filter & Sort -->
+    <div class="flex flex-wrap gap-2">
+        <button id="btn-semua" class="bg-gray-800 text-white px-3 py-1.5 rounded text-sm">Tampilkan Semua</button>
+        <button id="btn-diatas-rata" class="bg-green-600 text-white px-3 py-1.5 rounded text-sm">Filter Nilai >
+            Rata-rata</button>
+        <button id="btn-sort-asc" class="bg-indigo-600 text-white px-3 py-1.5 rounded text-sm">Urut Nama (A-Z)</button>
+        <button id="btn-sort-desc" class="bg-purple-600 text-white px-3 py-1.5 rounded text-sm">Urut Nama (Z-A)</button>
+    </div>
+
+    <!-- Ringkasan Statistik (Nilai Tertinggi & Rata-rata) -->
+    <div id="statistik-box" class="p-4 border rounded bg-blue-50 text-sm space-y-1"></div>
+
+    <!-- Tabel Data Mahasiswa -->
+    <div class="overflow-x-auto">
+        <table class="w-full border-collapse border border-gray-300 text-left">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border p-2">No</th>
+                    <th class="border p-2">NIM</th>
+                    <th class="border p-2">Nama</th>
+                    <th class="border p-2">Jurusan</th>
+                    <th class="border p-2">Nilai</th>
+                    <th class="border p-2">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-mahasiswa"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
