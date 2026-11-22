@@ -59,7 +59,6 @@ JundiLamtara_124140190_pertemuan3/
 │   │
 │   ├── index.html
 │   ├── package.json
-│   ├── README.md
 │   └── vite.config.js
 │ 
 ├── my-react-app/
