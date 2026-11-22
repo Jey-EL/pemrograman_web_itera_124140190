@@ -63,7 +63,7 @@ JundiLamtara_124140190_pertemuan1/
 
 1. Clone atau unduh repository ini ke komputer lokal:
    ```bash
-   git clone [https://github.com/Jey-EL/pemrograman_web_itera_124140190.git](https://github.com/Jey-EL/pemrograman_web_itera_124140190.git)
+   git clone https://github.com/Jey-EL/pemrograman_web_itera_124140190.git
    ```
 2. Masuk ke direktori `JundiLamtara_124140190_pertemuan1/tugas_kasir_mini_pos`.
 3. Buka file `index.html` menggunakan ekstensi **Live Server** di Visual Studio Code atau buka langsung melalui browser (Google Chrome / Microsoft Edge).
