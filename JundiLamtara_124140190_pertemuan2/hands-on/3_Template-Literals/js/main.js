@@ -1,7 +1,5 @@
-// Import helper output dan fungsi demo dari app.js
-import { demoVariables, demoArrowFunctions, demoTemplateLiterals } from './app.js';
+import { demoTemplateLiterals } from './app.js';
 
-// Fungsi helper untuk merender kartu hasil demo ke dalam antarmuka
 export function addOutput(title, subtitle, content) {
   const outputEl = document.getElementById("output");
   if (!outputEl) return;
@@ -16,35 +14,10 @@ export function addOutput(title, subtitle, content) {
   outputEl.appendChild(card);
 }
 
-// Fungsi utama untuk menjalankan semua demo
 function runAllDemos() {
-  // Demo Let dan Const
-  const varResults = demoVariables();
-  addOutput(
-    "1. Let dan Const",
-    "var vs let/const dan block scope",
-    `var (function scope): ${varResults.oldVar}
-let (block scope): ${varResults.newLet}
-const (immutable): ${varResults.PI}
-const object (mutable content): ${JSON.stringify(varResults.user)}`
-  );
-
-  // Demo Arrow Functions
-  const arrowResults = demoArrowFunctions();
-  addOutput(
-    "2. Arrow Functions",
-    "Perbandingan fungsi reguler dan arrow functions",
-    `Regular function: ${arrowResults.regularSum}
-Arrow function: ${arrowResults.arrowSum}
-Short arrow: ${arrowResults.shortArrowSum}
-No params: ${arrowResults.sayHello}
-Single param: ${arrowResults.square}`
-  );
-
-  // Demo Template Literals
   const templateResults = demoTemplateLiterals();
   addOutput(
-    "3. Template Literals",
+    "Template Literals",
     "String concatenation vs template literals",
     `Old way: ${templateResults.oldWay}
 New way: ${templateResults.newWay}
@@ -53,14 +26,12 @@ Multi-line: ${templateResults.multiLine}`
   );
 }
 
-// Hubungkan tombol Run Demo dengan fungsi eksekusi
 document.getElementById("runBtn")?.addEventListener("click", () => {
   const outputEl = document.getElementById("output");
   if (outputEl) outputEl.innerHTML = "";
   runAllDemos();
 });
 
-// Event handler untuk tombol pembersih layar
 document.getElementById("clearBtn")?.addEventListener("click", () => {
   const outputEl = document.getElementById("output");
   if (outputEl) outputEl.innerHTML = "";
