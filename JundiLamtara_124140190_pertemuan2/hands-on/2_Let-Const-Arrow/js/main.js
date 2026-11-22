@@ -18,18 +18,30 @@ export function addOutput(title, subtitle, content) {
 
 // Event handler untuk tombol Run Demo
 document.getElementById("runBtn")?.addEventListener("click", () => {
-  const varsResult = demoVariables();
+  const outputEl = document.getElementById("output");
+  if (outputEl) outputEl.innerHTML = "";
+
+  // Demo Let dan Const
+  const varResults = demoVariables();
   addOutput(
-    "Let dan Const",
-    "Perbandingan scope var, let, dan mutabilitas objek const",
-    JSON.stringify(varsResult, null, 2)
+    "1. Let dan Const",
+    "var vs let/const dan block scope",
+    `var (function scope): ${varResults.oldVar}
+let (block scope): ${varResults.newLet}
+const (immutable): ${varResults.PI}
+const object (mutable content): ${JSON.stringify(varResults.user)}`
   );
 
-  const arrowResult = demoArrowFunctions();
+  // Demo Arrow Functions
+  const arrowResults = demoArrowFunctions();
   addOutput(
-    "Arrow Functions",
-    "Perbandingan fungsi reguler dan variasi arrow function ES6+",
-    JSON.stringify(arrowResult, null, 2)
+    "2. Arrow Functions",
+    "Perbandingan fungsi reguler dan arrow functions",
+    `Regular function: ${arrowResults.regularSum}
+Arrow function: ${arrowResults.arrowSum}
+Short arrow: ${arrowResults.shortArrowSum}
+No params: ${arrowResults.sayHello}
+Single param: ${arrowResults.square}`
   );
 });
 
