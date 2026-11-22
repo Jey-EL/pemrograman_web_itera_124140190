@@ -19,11 +19,17 @@ jobs:
   deploy:
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -35,9 +41,9 @@ jobs:
           cp -r JundiLamtara_124140190_pertemuan1/. public/pertemuan1/
           cp -r JundiLamtara_124140190_pertemuan2/. public/pertemuan2/
 
-          npm ci --prefix JundiLamtara_124140190_pertemuan3
-          npm run build --prefix JundiLamtara_124140190_pertemuan3
-          cp -r JundiLamtara_124140190_pertemuan3/dist/. public/pertemuan3/
+          npm ci --prefix JundiLamtara_124140190_pertemuan3/manajemen-buku-pribadi
+          npm run build --prefix JundiLamtara_124140190_pertemuan3/manajemen-buku-pribadi
+          cp -r JundiLamtara_124140190_pertemuan3/manajemen-buku-pribadi/dist/. public/pertemuan3/
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
@@ -45,4 +51,5 @@ jobs:
           path: ./public
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
