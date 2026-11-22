@@ -18,7 +18,7 @@ Aplikasi **Manajemen Buku Pribadi** merupakan aplikasi berbasis web yang dibangu
 ```text
 JundiLamtara_124140190_pertemuan3/
 │
-├── 0_Konsep-Dasar-React/
+├── konsep-dasar-react/
 │ 
 ├── manajemen-buku-pribadi/
 │   │
