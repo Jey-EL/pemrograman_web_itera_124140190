@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Coba React Instan</title>
+    <!-- React 18 & Babel Standalone via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background: #f8fafc;
+            margin: 0;
+            padding: 2rem;
+            color: #1e293b;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        button {
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Wadah mount aplikasi React -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function CounterApp() {
+            const [count, setCount] = React.useState(0);
+
+            return (
+                <div className="card">
+                    <h2>React Berjalan di VS Code!</h2>
+                    <p>Uji coba komponen reaktif tanpa konfigurasi build rumit:</p>
+                    <p>Jumlah Klik: <strong style={{ color: '#0284c7' }}>{count}</strong> kali</p>
+                    <button onClick={() => setCount(count + 1)}>Tambah Nilai (+1)</button>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<CounterApp />);
+    </script>
+</body>
+
+</html>
