@@ -1,0 +1,125 @@
+.stats-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.stats-header {
+  margin-bottom: 1.5rem;
+}
+
+.stats-header h2 {
+  margin: 0 0 0.35rem;
+  color: #0f172a;
+}
+
+.stats-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat-card.total {
+  border-top: 4px solid #0284c7;
+}
+
+.stat-card.milik {
+  border-top: 4px solid #16a34a;
+}
+
+.stat-card.baca {
+  border-top: 4px solid #2563eb;
+}
+
+.stat-card.beli {
+  border-top: 4px solid #d97706;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.stat-percent {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.recent-section {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+.recent-section h3 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.recent-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.recent-list li:last-child {
+  border-bottom: none;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.tag-milik {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.tag-baca {
+  background-color: #e0f2fe;
+  color: #075985;
+}
+
+.tag-beli {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.empty-stats-msg {
+  color: #64748b;
+  margin: 0;
+}
