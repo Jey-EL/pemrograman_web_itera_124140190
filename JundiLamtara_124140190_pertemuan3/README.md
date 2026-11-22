@@ -34,7 +34,6 @@ JundiLamtara_124140190_pertemuan3/
 │   │   │   │   ├── BookForm.css
 │   │   │   │   └── BookForm.jsx
 │   │   │   └── BookList/
-│   │   │   └── BookList/
 │   │   │       ├── BookList.css
 │   │   │       └── BookList.jsx
 │   │   │
