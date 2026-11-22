@@ -7,7 +7,7 @@
 - **Program Studi:** Teknik Informatika
 - **Kelas Praktikum:** Pengembangan Aplikasi Web RB
 - **Repository GitHub:** [Source Code Pertemuan 1](https://github.com/Jey-EL/pemrograman_web_itera_124140190/tree/main/JundiLamtara_124140190_pertemuan1)
-- **GitHub Pages:** [Demo Pertemuan 1](https://jey-el.github.io/pemrograman_web_itera_124140190/pertemuan1/)
+- **GitHub Pages:** [Mini POS - Kasir & Keranjang Belanja](https://jey-el.github.io/pemrograman_web_itera_124140190/pertemuan1/tugas_kasir_mini_pos/)
 
 ## Deskripsi Aplikasi
 
@@ -70,19 +70,19 @@ JundiLamtara_124140190_pertemuan1/
 
 ## Daftar Fitur
 
-- [x] **Validasi Form Input Barang:** Memeriksa nama barang (minimal 3 karakter), harga satuan (angka positif minimal Rp 500), dan jumlah/qty (bilangan bulat minimal 1) disertai pesan error berwarna merah serta reset form otomatis saat valid.
+- [x] **Validasi Form Input Barang:** Memeriksa nama barang (minimal 3 karakter), harga satuan (bilangan bulat positif minimal Rp500), dan jumlah/qty (bilangan bulat minimal 1) disertai pesan error berwarna merah serta reset form otomatis saat valid.
 - [x] **Kalkulasi Subtotal & Total Belanja Otomatis:** Menghitung `Subtotal = Harga Satuan × Qty` pada setiap baris barang dan mengakumulasikan total belanja secara *real-time*.
-- [x] **Kalkulator Diskon Otomatis / Kode Promo:** Memberikan potongan diskon 10% secara otomatis saat total belanja mencapai minimal Rp 50.000 (serta dukungan kode promo `HEMAT10`) dan menampilkan nominal potongan beserta total akhir.
-- [x] **Kalkulator Pembayaran & Kembalian:** Menghitung selisih `Kembalian = Uang Bayar − Total Akhir` secara otomatis dan menampilkan peringatan apabila nominal uang bayar belum mencukupi.
+- [x] **Kalkulator Diskon Otomatis:** Memberikan potongan diskon 10% secara otomatis saat total belanja mencapai minimal Rp50.000 dan menampilkan nominal potongan beserta total akhir.
+- [x] **Kalkulator Pembayaran & Kembalian:** Menghitung selisih `Kembalian = Uang Bayar − Total Akhir` secara otomatis dan menampilkan status keterangan apabila nominal uang bayar belum mencukupi.
 - [x] **Manajemen Tabel Keranjang Belanja:** Menampilkan daftar belanja interaktif (No, Nama Barang, Harga Satuan, Qty, Subtotal, dan Aksi) dengan tombol **Hapus** di setiap baris.
 - [x] **Penyimpanan Persisten (`localStorage`):** Menyimpan data keranjang menggunakan `JSON.stringify()` dan memuatnya kembali menggunakan `JSON.parse()` sehingga data tetap tersimpan meskipun halaman di-refresh.
 - [x] **Tombol Transaksi Baru / Reset:** Mengosongkan seluruh daftar keranjang belanja sekaligus menghapus data dari `localStorage` untuk memulai transaksi baru.
 
 ## Penjelasan Teknis Singkat
 
-1. **Penanganan Validasi Input:** Ketika form disubmit (`event.preventDefault()`), fungsi validasi mengecek panjang karakter nama barang (`nama.trim().length >= 3`), nilai numerik harga (`!isNaN(harga) && harga >= 500`), serta bilangan bulat kuantitas (`Number.isInteger(qty) && qty >= 1`). Jika salah satu syarat tidak terpenuhi, teks pesan kesalahan ditampilkan pada elemen feedback di bawah masing-masing kolom input dan eksekusi dihentikan.
-2. **Algoritma Kalkulator Transaksi:** Data keranjang disimpan sebagai array of objects. Method `.reduce()` digunakan untuk menjumlahkan seluruh `harga * qty` menjadi total kotor. Sistem kemudian mengevaluasi syarat diskon (`total >= 50000` atau kode promo `HEMAT10`) untuk menghitung potongan 10% dan menghasilkan `totalAkhir`. Pada event `input` kolom uang bayar, sistem membandingkan `uangBayar` dengan `totalAkhir` untuk menampilkan status kurang bayar atau nominal kembalian dalam format Rupiah (`Intl.NumberFormat('id-ID')`).
-3. **Mekanisme Serialisasi `localStorage`:** Setiap perubahan pada keranjang (tambah item, hapus item, atau reset transaksi) memicu fungsi penyimpanan yang mengonversi array keranjang menjadi string JSON via `localStorage.setItem('keranjang_pos', JSON.stringify(keranjang))`. Saat halaman pertama kali dimuat (`DOMContentLoaded`), data dibaca kembali menggunakan `JSON.parse(localStorage.getItem('keranjang_pos')) || []` dan langsung dirender ulang ke dalam tabel HTML beserta ringkasan pembayarannya.
+1. **Penanganan Validasi Input:** Ketika form disubmit (`event.preventDefault()`), fungsi `validasiForm()` memeriksa panjang karakter nama barang (`nama.length >= 3`), nilai numerik bilangan bulat harga (`Number.isInteger(harga) && harga >= 500`), serta bilangan bulat kuantitas (`Number.isInteger(jumlah) && jumlah >= 1`). Jika salah satu syarat tidak terpenuhi, teks pesan kesalahan ditampilkan pada elemen `<small>` di bawah masing-masing kolom input dan fokus diarahkan ke input yang bermasalah.
+2. **Algoritma Kalkulator Transaksi:** Data keranjang disimpan sebagai array of objects. Fungsi `hitungRingkasan()` menjumlahkan seluruh `harga * qty` menggunakan `.forEach()`, mengevaluasi syarat diskon (`total >= 50000`) untuk menghitung potongan 10%, dan menghasilkan `totalAkhir`. Pada event `input` kolom uang bayar, fungsi `hitungKembalian()` membandingkan `uangBayar` dengan `totalAkhir` untuk menampilkan status kurang bayar atau nominal kembalian dalam format Rupiah (`angka.toLocaleString("id-ID")`).
+3. **Mekanisme Serialisasi `localStorage`:** Setiap perubahan pada keranjang (tambah item, hapus item, atau reset transaksi) memicu `simpanKeranjang()` yang mengonversi array keranjang menjadi string JSON via `localStorage.setItem("keranjang", JSON.stringify(keranjang))`. Saat halaman dimuat, fungsi `muatKeranjang()` membaca dan memvalidasi kembali data menggunakan `JSON.parse(localStorage.getItem("keranjang"))` sebelum menampilkannya ke tabel melalui `tampilkanKeranjang()`.
 
 ## Tangkapan Layar (Screenshot)
 
