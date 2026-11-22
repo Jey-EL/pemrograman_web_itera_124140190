@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITERA Student Personal Dashboard — Jundi Lamtara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-slate-100 text-slate-800 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+        <!-- Header Dashboard -->
+        <header
+            class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white rounded-2xl p-6 shadow-lg flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+                <span
+                    class="inline-block bg-blue-500/30 border border-blue-300/30 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                    Teknik Informatika • ITERA
+                </span>
+                <h1 class="text-2xl md:text-3xl font-bold tracking-tight">
+                    Personal Academic Dashboard
+                </h1>
+                <p class="text-blue-100 text-sm mt-1">
+                    Jundi Lamtara (124140190) — Manajemen Tugas Kuliah &amp; Agenda Praktikum
+                </p>
+            </div>
+
+            <!-- Widget Waktu Real-Time -->
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3 text-right">
+                <div id="liveClock" class="text-2xl font-mono font-bold tracking-wider">00:00:00</div>
+                <div id="liveDate" class="text-xs text-blue-100 mt-0.5">Memuat tanggal...</div>
+            </div>
+        </header>
+
+        <!-- Grid Widget API Publik (Cuaca Kampus ITERA & Kutipan Harian) -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Widget Cuaca ITERA (Open-Meteo API) -->
+            <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-slate-500">Cuaca Kampus ITERA</h2>
+                    <button id="refreshWeatherBtn" class="text-xs text-blue-600 hover:underline font-medium">
+                        Refresh
+                    </button>
+                </div>
+                <div id="weatherWidget" class="my-auto">
+                    <p class="text-sm text-slate-400 animate-pulse">Mengambil data cuaca Lampung Selatan...</p>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-3">Sumber: Open-Meteo API (-5.36, 105.31)</p>
+            </div>
+
+            <!-- Widget Kutipan Harian (DummyJSON Quotes API) -->
+            <div
+                class="md:col-span-2 bg-white rounded-xl p-5 shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-slate-500">Inspirasi Produktivitas Harian
+                    </h2>
+                    <button id="refreshQuoteBtn" class="text-xs text-indigo-600 hover:underline font-medium">
+                        Kutipan Baru
+                    </button>
+                </div>
+                <div id="quoteWidget" class="my-auto">
+                    <p class="text-sm text-slate-400 animate-pulse">Memuat kutipan inspiratif...</p>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-3">Sumber: DummyJSON Random Quotes API</p>
+            </div>
+        </section>
+
+        <!-- Ringkasan Statistik Tugas -->
+        <section id="statsContainer" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Dirender dinamis oleh DashboardApp -->
+        </section>
+
+        <!-- Konten Utama: Form Input & Daftar Tugas/Jadwal -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Form Tambah / Edit Item -->
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 h-fit">
+                <h2 id="formTitle" class="text-lg font-bold text-slate-800 mb-4">
+                    Tambah Agenda / Tugas Baru
+                </h2>
+                <form id="taskForm" class="space-y-4">
+                    <input type="hidden" id="editTaskId" value="" />
+
+                    <div>
+                        <label for="taskTitle" class="block text-xs font-semibold text-slate-600 uppercase mb-1">
+                            Judul Tugas / Jadwal
+                        </label>
+                        <input type="text" id="taskTitle" required placeholder="Contoh: Laporan Praktikum Pemweb P2"
+                            class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label for="taskCourse" class="block text-xs font-semibold text-slate-600 uppercase mb-1">
+                                Mata Kuliah
+                            </label>
+                            <input type="text" id="taskCourse" required placeholder="Pemrograman Web"
+                                class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        </div>
+
+                        <div>
+                            <label for="taskCategory" class="block text-xs font-semibold text-slate-600 uppercase mb-1">
+                                Kategori
+                            </label>
+                            <select id="taskCategory"
+                                class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="Tugas Kuliah">Tugas Kuliah</option>
+                                <option value="Praktikum">Praktikum</option>
+                                <option value="Jadwal Kuliah">Jadwal Kuliah</option>
+                                <option value="Organisasi / Proyek">Organisasi / Proyek</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label for="taskDeadline" class="block text-xs font-semibold text-slate-600 uppercase mb-1">
+                                Tenggat / Tanggal
+                            </label>
+                            <input type="date" id="taskDeadline" required
+                                class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        </div>
+
+                        <div>
+                            <label for="taskPriority" class="block text-xs font-semibold text-slate-600 uppercase mb-1">
+                                Prioritas
+                            </label>
+                            <select id="taskPriority"
+                                class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="Tinggi">Tinggi</option>
+                                <option value="Sedang" selected>Sedang</option>
+                                <option value="Rendah">Rendah</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="taskNote" class="block text-xs font-semibold text-slate-600 uppercase mb-1">
+                            Catatan Singkat (Opsional)
+                        </label>
+                        <textarea id="taskNote" rows="2" placeholder="Detail pengumpulan atau ruang kelas..."
+                            class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <div class="flex gap-2 pt-2">
+                        <button type="submit" id="submitBtn"
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg text-sm transition">
+                            Simpan Agenda
+                        </button>
+                        <button type="button" id="cancelEditBtn"
+                            class="hidden bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold py-2 px-4 rounded-lg text-sm transition">
+                            Batal
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Daftar Agenda & Filter -->
+            <div class="lg:col-span-2 bg-white rounded-xl p-6 shadow-sm border border-slate-200 space-y-4">
+                <div
+                    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-slate-100 pb-4">
+                    <h2 class="text-lg font-bold text-slate-800">Daftar Agenda &amp; Tugas</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <select id="filterStatus"
+                            class="border border-slate-300 rounded-lg px-3 py-1.5 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">Semua Status</option>
+                            <option value="pending">Belum Selesai</option>
+                            <option value="completed">Selesai</option>
+                        </select>
+                        <select id="filterCategory"
+                            class="border border-slate-300 rounded-lg px-3 py-1.5 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">Semua Kategori</option>
+                            <option value="Tugas Kuliah">Tugas Kuliah</option>
+                            <option value="Praktikum">Praktikum</option>
+                            <option value="Jadwal Kuliah">Jadwal Kuliah</option>
+                            <option value="Organisasi / Proyek">Organisasi / Proyek</option>
+                        </select>
+                        <button id="resetSampleBtn"
+                            class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1.5 rounded-lg font-medium transition"
+                            title="Muat ulang contoh data awal">
+                            Reset Default
+                        </button>
+                    </div>
+                </div>
+
+                <div id="taskListContainer" class="space-y-3">
+                    <!-- Daftar TaskItem dirender di sini -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+/* Transisi halus untuk item daftar tugas */
+.task-card {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-1px);
+}
