@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 7 - Async Programming (Promise &amp; Async/Await)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto space-y-6">
+        <header>
+            <h1 class="text-3xl font-bold text-indigo-600 mb-2">
+                Latihan Praktikum: Async Programming
+            </h1>
+            <p class="text-gray-600">
+                Multi-endpoint fetch, retry exponential backoff, loading state, async error boundary, pagination, dan
+                debounced search
+            </p>
+        </header>
+
+        <!-- 1 & 2. Multi-Endpoint Fetch & Retry Exponential Backoff -->
+        <section class="bg-white p-6 rounded-lg shadow-md space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                    <h2 class="font-bold text-lg text-gray-800">1 &amp; 2. Multi-Endpoint Fetch &amp; Retry Exponential
+                        Backoff</h2>
+                    <p class="text-xs text-gray-500">Menggabungkan endpoint users &amp; posts, serta simulasi retry
+                        otomatis saat gagal</p>
+                </div>
+                <div class="flex gap-2">
+                    <button id="btnFetchGabungan"
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm py-2 px-4 rounded font-medium">
+                        Fetch Gabungan
+                    </button>
+                    <button id="btnTestRetry"
+                        class="bg-amber-600 hover:bg-amber-700 text-white text-sm py-2 px-4 rounded font-medium">
+                        Uji Retry Backoff
+                    </button>
+                </div>
+            </div>
+            <div id="multiFetchContainer" class="text-sm"></div>
+        </section>
+
+        <!-- 3 & 4. Loading State & Async Error Boundary -->
+        <section class="bg-white p-6 rounded-lg shadow-md space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                    <h2 class="font-bold text-lg text-gray-800">3 &amp; 4. Loading State &amp; Async Error Boundary</h2>
+                    <p class="text-xs text-gray-500">Simulasi indikator loading di UI dan penangkapan error terisolasi
+                        dengan tombol coba lagi</p>
+                </div>
+                <div class="flex gap-2">
+                    <button id="btnSimulasiSukses"
+                        class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm py-2 px-4 rounded font-medium">
+                        Simulasi Sukses
+                    </button>
+                    <button id="btnSimulasiError"
+                        class="bg-rose-600 hover:bg-rose-700 text-white text-sm py-2 px-4 rounded font-medium">
+                        Simulasi Error
+                    </button>
+                </div>
+            </div>
+            <div id="errorBoundaryContainer" class="text-sm"></div>
+        </section>
+
+        <!-- 5. Async Pagination -->
+        <section class="bg-white p-6 rounded-lg shadow-md space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                    <h2 class="font-bold text-lg text-gray-800">5. Pagination dengan Async/Await</h2>
+                    <p class="text-xs text-gray-500">Mengambil data daftar post per halaman secara asinkron dari API</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="btnPrevPage"
+                        class="bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1.5 px-3 rounded font-medium disabled:opacity-50">
+                        &larr; Prev
+                    </button>
+                    <span id="pageIndicator" class="text-sm font-semibold text-gray-700 px-2">Halaman 1</span>
+                    <button id="btnNextPage"
+                        class="bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1.5 px-3 rounded font-medium">
+                        Next &rarr;
+                    </button>
+                </div>
+            </div>
+            <div id="paginationContainer" class="text-sm"></div>
+        </section>
+
+        <!-- 6. Debounced Search dengan Async API Calls -->
+        <section class="bg-white p-6 rounded-lg shadow-md space-y-4">
+            <div>
+                <h2 class="font-bold text-lg text-gray-800">6. Debounced Search dengan Async API Calls</h2>
+                <p class="text-xs text-gray-500 mb-3">Ketik nama pengguna (misal: Leanne, Ervin, Clementine) — request
+                    API ditunda 450ms setelah berhenti mengetik</p>
+                <input type="text" id="searchInput" placeholder="Cari nama user dari API..."
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
+            <div id="searchResultContainer" class="text-sm"></div>
+        </section>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
