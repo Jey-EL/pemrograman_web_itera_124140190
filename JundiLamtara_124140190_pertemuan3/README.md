@@ -78,7 +78,7 @@ JundiLamtara_124140190_pertemuan3/
 
 1. Clone repository ini ke komputer lokal:
    ```bash
-   git clone [https://github.com/Jey-EL/pemrograman_web_itera_124140190.git](https://github.com/Jey-EL/pemrograman_web_itera_124140190.git)
+   git clone https://github.com/Jey-EL/pemrograman_web_itera_124140190.git
    ```
 2. Masuk ke direktori proyek aplikasi manajemen buku:
    ```bash
