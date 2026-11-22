@@ -54,7 +54,7 @@ JundiLamtara_124140190_pertemuan2/
 
 1. Clone atau unduh repository ini ke komputer lokal:
    ```bash
-   git clone [https://github.com/Jey-EL/pemrograman_web_itera_124140190.git](https://github.com/Jey-EL/pemrograman_web_itera_124140190.git)
+   git clone https://github.com/Jey-EL/pemrograman_web_itera_124140190.git
    ```
 2. Masuk ke direktori `JundiLamtara_124140190_pertemuan2/tugas_personal_dashboard`.
 3. Karena proyek menggunakan **ES6 Modules (`type="module"`)**, buka file `index.html` melalui local HTTP server menggunakan ekstensi **Live Server** di Visual Studio Code.
