@@ -83,7 +83,7 @@ JundiLamtara_124140190_pertemuan3/
    ```
 2. Masuk ke direktori proyek aplikasi manajemen buku:
    ```bash
-   cd pemrograman_web_itera_124140190/JundiLamtara_124140190_pertemuan3/manajemen-buku-pribadi
+   cd JundiLamtara_124140190_pertemuan3/manajemen-buku-pribadi
    ```
 3. Pasang seluruh dependensi yang dibutuhkan:
    ```bash
