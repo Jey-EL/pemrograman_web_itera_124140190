@@ -20,31 +20,15 @@ JundiLamtara_124140190_pertemuan1/
 │
 ├── hands-on/
 │   ├── 1_Variabel-Kondisional/
-│   │   ├── index.html
-│   │   └── script.js
 │   ├── 2_Loop-Fungsi/
-│   │   ├── index.html
-│   │   └── script.js
 │   ├── 3_Array-Objek/
-│   │   ├── index.html
-│   │   └── script.js
 │   └── 4_DOM-API/
-│       ├── index.html
-│       └── script.js
 │
 ├── latihan/
 │   ├── 1_Variabel-Kondisional/
-│   │   ├── index.html
-│   │   └── script.js
 │   ├── 2_Loop-Fungsi/
-│   │   ├── index.html
-│   │   └── script.js
 │   ├── 3_Array-Objek/
-│   │   ├── index.html
-│   │   └── script.js
 │   └── 4_DOM-API/
-│       ├── index.html
-│       └── script.js
 │
 ├── screenshot/
 │   ├── 01-form-utama.png
