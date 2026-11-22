@@ -6,7 +6,7 @@
 - **NIM:** 124140190
 - **Program Studi:** Teknik Informatika
 - **Kelas Praktikum:** Pengembangan Aplikasi Web RB
-- **Repository GitHub:** [Source Code Pertemuan 3](https://github.com/Jey-EL/pemrograman_web_itera_124140190/tree/main/JundiLamtara_124140190_pertemuan3/manajemen-buku-pribadi)
+- **Repository GitHub:** [Source Code Pertemuan 3](https://github.com/Jey-EL/pemrograman_web_itera_124140190/tree/main/JundiLamtara_124140190_pertemuan3)
 - **GitHub Pages:** [Aplikasi Manajemen Buku Pribadi](https://jey-el.github.io/pemrograman_web_itera_124140190/pertemuan3/)
 
 ## Deskripsi Aplikasi
