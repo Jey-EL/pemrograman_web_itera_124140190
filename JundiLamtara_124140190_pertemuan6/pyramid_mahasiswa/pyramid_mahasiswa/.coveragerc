@@ -1,0 +1,3 @@
+[run]
+source = pyramid_mahasiswa
+omit = pyramid_mahasiswa/test*
