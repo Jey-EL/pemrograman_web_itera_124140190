@@ -10,12 +10,7 @@
 
 ## Deskripsi Program
 
-Repositori ini berisi hasil pengerjaan praktikum **Pertemuan 4: Dasar Pemrograman Python** pada mata kuliah Pengembangan Aplikasi Web, Program Studi Teknik Informatika, Institut Teknologi Sumatera (ITERA). Materi yang diimplementasikan meliputi pengenalan sintaks dasar Python, variabel dan tipe data, struktur kendali (`if-elif-else`, `for`, dan `while`), modularitas fungsi (`def`, *default arguments*, `*args`, `**kwargs`, dan *lambda*), struktur data koleksi (`list`, `tuple`, `dictionary`, dan `set`), serta pembuatan dan penggunaan modul kustom.
-
-Pada direktori tugas utama (`tugas_dasar_python`), terdapat tiga program mandiri yang disusun mengikuti konvensi penulisan PEP 8:
-1. **Program Penghitung BMI (`tugas1_bmi.py`):** Menerima input berat badan (kg) dan tinggi badan (m), menghitung nilai *Body Mass Index* (BMI), serta mengklasifikasikannya ke dalam empat kategori status berat badan.
-2. **Program Pengelolaan Data Nilai Mahasiswa (`tugas2_nilai_mahasiswa.py`):** Mengelola data nilai mahasiswa menggunakan struktur `list` of `dictionary`, menghitung nilai akhir berbobot (`30% UTS + 40% UAS + 30% Tugas`), menentukan grade huruf (`A`–`E`), menampilkan tabel terformat ke terminal, serta mendeteksi mahasiswa dengan nilai akhir tertinggi dan terendah.
-3. **Modul Matematika & Program Pengujian (`math_operations.py` & `main.py`):** Menyediakan modul kustom berisi konstanta `PI`, fungsi perhitungan luas dan keliling bangun datar (persegi, persegi panjang, dan lingkaran), serta fungsi konversi suhu (Celsius ke Fahrenheit dan Kelvin) yang diimpor dan diuji melalui `main.py` menggunakan dua cara impor berbeda.
+Program ini merupakan kumpulan aplikasi konsol berbasis Python yang mengimplementasikan dasar-dasar pemrograman prosedural, struktur kendali, koleksi data, dan modularitas fungsi. Pada folder tugas utama (`tugas_dasar_python`), terdapat tiga program mandiri yang meliputi **Program Penghitung BMI (`tugas1_bmi.py`)**, **Program Pengelolaan Data Nilai Mahasiswa (`tugas2_nilai_mahasiswa.py`)**, serta **Modul Matematika & Program Pengujian (`math_operations.py` & `main.py`)** yang disusun sesuai standar penulisan PEP 8.
 
 ## Struktur Berkas
 
