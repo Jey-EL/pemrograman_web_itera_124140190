@@ -1,4 +1,4 @@
-# Tugas Praktikum: Dasar Pemrograman Python
+# Dasar Pemrograman Python & Modularitas Program
 
 ## Identitas
 
@@ -8,64 +8,111 @@
 - **Kelas Praktikum:** Pengembangan Aplikasi Web RB
 - **Repository GitHub:** [Source Code Pertemuan 4](https://github.com/Jey-EL/pemrograman_web_itera_124140190/tree/main/JundiLamtara_124140190_pertemuan4)
 
+## Deskripsi Program
+
+Repositori ini berisi hasil pengerjaan praktikum **Pertemuan 4: Dasar Pemrograman Python** pada mata kuliah Pengembangan Aplikasi Web, Program Studi Teknik Informatika, Institut Teknologi Sumatera (ITERA). Materi yang diimplementasikan meliputi pengenalan sintaks dasar Python, variabel dan tipe data, struktur kendali (`if-elif-else`, `for`, dan `while`), modularitas fungsi (`def`, *default arguments*, `*args`, `**kwargs`, dan *lambda*), struktur data koleksi (`list`, `tuple`, `dictionary`, dan `set`), serta pembuatan dan penggunaan modul kustom.
+
+Pada direktori tugas utama (`tugas_dasar_python`), terdapat tiga program mandiri yang disusun mengikuti konvensi penulisan PEP 8:
+1. **Program Penghitung BMI (`tugas1_bmi.py`):** Menerima input berat badan (kg) dan tinggi badan (m), menghitung nilai *Body Mass Index* (BMI), serta mengklasifikasikannya ke dalam empat kategori status berat badan.
+2. **Program Pengelolaan Data Nilai Mahasiswa (`tugas2_nilai_mahasiswa.py`):** Mengelola data nilai mahasiswa menggunakan struktur `list` of `dictionary`, menghitung nilai akhir berbobot (`30% UTS + 40% UAS + 30% Tugas`), menentukan grade huruf (`A`–`E`), menampilkan tabel terformat ke terminal, serta mendeteksi mahasiswa dengan nilai akhir tertinggi dan terendah.
+3. **Modul Matematika & Program Pengujian (`math_operations.py` & `main.py`):** Menyediakan modul kustom berisi konstanta `PI`, fungsi perhitungan luas dan keliling bangun datar (persegi, persegi panjang, dan lingkaran), serta fungsi konversi suhu (Celsius ke Fahrenheit dan Kelvin) yang diimpor dan diuji melalui `main.py` menggunakan dua cara impor berbeda.
+
 ## Struktur Berkas
 
-```
-Jundi_124140190_pertemuan4/
-├── .gitignore
-├── README.md
-├── tugas1_bmi.py
-├── tugas2_nilai_mahasiswa.py
-├── math_operations.py
-└── main.py
-```
-
-## Soal 1: Penghitung BMI (`tugas1_bmi.py`)
-
-Program meminta berat badan (kg) dan tinggi badan (m), menghitung BMI dengan rumus `berat / (tinggi * tinggi)`, lalu menentukan kategori dengan `if-elif-else`:
-
-| Nilai BMI        | Kategori             |
-|------------------|----------------------|
-| < 18.5           | Berat badan kurang   |
-| 18.5 – < 25      | Berat badan normal   |
-| 25 – < 30        | Berat badan berlebih |
-| ≥ 30             | Obesitas             |
-
-**Cara menjalankan:**
-```bash
-python tugas1_bmi.py
-```
-
-**Screenshot hasil eksekusi:** 
-
-![Penghitung BMI](images/penghitung-bmi.png)
-
-## Soal 2: Pengelolaan Nilai Mahasiswa (`tugas2_nilai_mahasiswa.py`)
-
-Program menyimpan data 6 mahasiswa dalam list berisi dictionary. Nilai akhir dihitung dengan bobot `30% UTS + 40% UAS + 30% Tugas`. Grade ditentukan dari A sampai E, kemudian data ditampilkan dalam tabel. Program juga mencari mahasiswa dengan nilai akhir tertinggi dan terendah menggunakan `max()` dan `min()` dengan parameter `key`.
-
-**Cara menjalankan:**
-```bash
-python tugas2_nilai_mahasiswa.py
+```text
+JundiLamtara_124140190_pertemuan4/
+│
+├── hands-on/
+│   ├── 01_pengenalan.py
+│   ├── 02_variabel.py
+│   ├── 03_kendali.py
+│   ├── 04_fungsi.py
+│   ├── 05_struktur_data.py
+│   ├── 06_modul_app.py
+│   └── kalkulator_lib.py
+│
+├── latihan/
+│   ├── latihan1.py
+│   ├── latihan2_suhu.py
+│   ├── latihan3_tebak.py
+│   ├── latihan4_validasi.py
+│   ├── latihan5_kontak.py
+│   ├── main.py
+│   └── password_gen.py
+│
+├── screenshot/
+│   ├── 01_penghitung-bmi.png
+│   ├── 02_nilai-mahasiswa.png
+│   └── 03_math_operations.png
+│
+├── tugas_dasar_python/
+│   ├── .gitignore
+│   ├── main.py
+│   ├── math_operations.py
+│   ├── tugas1_bmi.py
+│   └── tugas2_nilai_mahasiswa.py
+│
+└── README.md
 ```
 
-**Screenshot hasil eksekusi:**
+## Panduan Menjalankan Program
 
-![Nilai Mahasiswa](images/nilai-mahasiswa.png)
+1. Pastikan **Python 3.8+** sudah terpasang pada sistem Anda (verifikasi dengan `python --version`).
+2. Clone atau unduh repository ini ke komputer lokal:
+   ```bash
+   git clone https://github.com/Jey-EL/pemrograman_web_itera_124140190.git
+   ```
+3. Buka folder `JundiLamtara_124140190_pertemuan4` di **Visual Studio Code**, lalu buka integrated terminal (`Ctrl + \``).
+4. Masuk ke direktori `tugas_dasar_python`:
+   ```bash
+   cd JundiLamtara_124140190_pertemuan4/tugas_dasar_python
+   ```
+5. Jalankan masing-masing skrip tugas melalui terminal:
+   - **Soal 1 — Program Penghitung BMI:**
+     ```bash
+     python tugas1_bmi.py
+     ```
+   - **Soal 2 — Program Pengelolaan Data Nilai Mahasiswa:**
+     ```bash
+     python tugas2_nilai_mahasiswa.py
+     ```
+   - **Soal 3 — Modul Matematika & Program Pengujian:**
+     ```bash
+     python main.py
+     ```
+6. *(Opsional)* Untuk menjalankan skrip percobaan pada folder `hands-on` atau `latihan`, arahkan terminal ke folder terkait lalu eksekusi berkas `.py` yang diinginkan:
+   ```bash
+   # Contoh menjalankan hands-on
+   cd ../hands-on
+   python 06_modul_app.py
 
-## Soal 3: Modul Matematika (`math_operations.py` & `main.py`)
+   # Contoh menjalankan latihan mandiri
+   cd ../latihan
+   python main.py
+   ```
 
-- `math_operations.py` adalah modul yang berisi konstanta `PI` serta fungsi:
-  - Geometri: `luas_persegi`, `keliling_persegi`, `luas_persegi_panjang`, `keliling_persegi_panjang`, `luas_lingkaran`, `keliling_lingkaran`.
-  - Konversi suhu: `celsius_ke_fahrenheit`, `celsius_ke_kelvin`.
-- `main.py` mengimpor modul dengan dua cara: `import math_operations` dan `from math_operations import PI, luas_lingkaran, celsius_ke_kelvin`.
+## Daftar Fitur
 
-**Cara menjalankan:**
-```bash
-python main.py
-```
-Jalankan dari dalam folder yang sama agar impor modul berhasil.
+- [x] **Penghitung BMI Interaktif (`tugas1_bmi.py`):** Menerima input berat badan (kg) dan tinggi badan (m), menghitung $\text{BMI} = \frac{\text{berat}}{\text{tinggi}^2}$, memformat hasil ke 2 angka di belakang koma dengan *f-string*, serta mengklasifikasikan status berat badan (`Berat badan kurang`, `Berat badan normal`, `Berat badan berlebih`, dan `Obesitas`).
+- [x] **Rekapitulasi & Statistik Nilai Mahasiswa (`tugas2_nilai_mahasiswa.py`):** Menyimpan data mahasiswa dalam `list` of `dictionary`, menghitung nilai akhir dengan bobot `30% UTS + 40% UAS + 30% Tugas`, mengonversi nilai ke grade `A`–`E`, mencetak tabel berformat dinamis ke terminal, serta menampilkan mahasiswa peraih nilai tertinggi dan terendah.
+- [x] **Modul Matematika Kustom (`math_operations.py`):** Menyediakan konstanta `PI = 3.14159`, fungsi luas dan keliling untuk 3 bangun datar (persegi, persegi panjang, dan lingkaran), serta 2 fungsi konversi temperatur suhu (Celsius ke Fahrenheit dan Celsius ke Kelvin).
+- [x] **Pengujian Modul Multi-Impor (`main.py`):** Mengimpor dan menguji seluruh fungsi dari `math_operations.py` dengan menerapkan dua gaya impor berbeda (`import math_operations as ...` dan `from math_operations import ...`).
+- [x] **Konvensi PEP 8 & Dokumentasi Fungsi:** Seluruh berkas menggunakan indentasi 4 spasi, penamaan variabel/fungsi `snake_case`, *type hints*, serta *docstring* pada setiap fungsi untuk menjelaskan parameter dan nilai kembaliannya.
+- [x] **Konfigurasi `.gitignore`:** Mengabaikan direktori `venv/`, `__pycache__/`, dan berkas sementara agar tidak ikut terunggah ke repositori Git.
 
-**Screenshot hasil eksekusi:**
+## Penjelasan Teknis Singkat
 
-![Modul Matematika](images/modul-matematika.png)
+1. **Alur Kerja `tugas1_bmi.py`:** Input berat badan dan tinggi badan dibaca sebagai tipe `float` melalui `input()`, lalu diproses oleh fungsi `hitung_bmi(berat, tinggi)`. Nilai BMI yang dikembalikan selanjutnya dievaluasi menggunakan percabangan berjenjang `if-elif-else` di dalam fungsi `tentukan_kategori_bmi(bmi)` untuk menentukan kategori status berat badan dan mencetaknya ke terminal.
+2. **Alur Kerja `tugas2_nilai_mahasiswa.py`:** Setiap dictionary mahasiswa di dalam `data_mahasiswa` diiterasi menggunakan perulangan `for` untuk menghitung `nilai_akhir` (via `hitung_nilai_akhir()`) dan menentukan `grade` (via `tentukan_grade()`). Lebar kolom tabel dihitung secara dinamis berdasarkan panjang nama terpanjang sebelum dicetak dengan perataan *f-string*. Fungsi bawaan `max()` dan `min()` dengan `key=lambda m: m["nilai_akhir"]` digunakan untuk mengidentifikasi peraih nilai tertinggi dan terendah.
+3. **Alur Kerja `math_operations.py` & `main.py`:** Seluruh fungsi geometri dan konversi suhu dienkapsulasi secara modular di `math_operations.py` bersama konstanta `PI`. Berkas `main.py` mengimpor modul tersebut menggunakan dua pendekatan berbeda (impor modul dengan alias dan impor selektif ke *namespace* lokal) untuk mengeksekusi dan menampilkan hasil pengujian seluruh fungsi secara terstruktur.
+
+## Tangkapan Layar (Screenshot)
+
+### 1. Hasil Eksekusi Program Penghitung BMI (`tugas1_bmi.py`)
+![Hasil Eksekusi Penghitung BMI](screenshot/01_penghitung-bmi.png)
+
+### 2. Hasil Eksekusi Pengelolaan Data Nilai Mahasiswa (`tugas2_nilai_mahasiswa.py`)
+![Hasil Eksekusi Data Nilai Mahasiswa](screenshot/02_nilai-mahasiswa.png)
+
+### 3. Hasil Eksekusi Modul Matematika Python (`main.py`)
+![Hasil Eksekusi Modul Math Operations](screenshot/03_math_operations.png)
