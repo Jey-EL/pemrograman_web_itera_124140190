@@ -11,7 +11,7 @@ from math_operations import PI, luas_lingkaran, celsius_ke_kelvin
 
 print("=== GEOMETRI (import math_operations) ===")
 sisi = 5
-print(f"Persegi (sisi {sisi})               : luas = {math_operations.luas_persegi(sisi):.2f}, "
+print(f"Persegi (sisi {sisi})                 : luas = {math_operations.luas_persegi(sisi):.2f}, "
       f"keliling = {math_operations.keliling_persegi(sisi):.2f}")
 
 panjang, lebar = 8, 3
