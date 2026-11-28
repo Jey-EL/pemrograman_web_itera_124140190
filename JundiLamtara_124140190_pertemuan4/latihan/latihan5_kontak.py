@@ -1,7 +1,5 @@
 # ===================================================
 # Berkas: latihan5_kontak.py
-# Nama  : Jundi Lamtara
-# NIM   : 124140190
 # Deskripsi: Katalog Kontak Sederhana menggunakan Dictionary
 # ===================================================
 
